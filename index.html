@@ -1,0 +1,105 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ballon Pop</title>
+  <link rel="stylesheet" href="<link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+  <!-- link tab, then type style.css. cmd click to create new file -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<!-- included font awesome which is a library of stuff to use^^^^^^ such as icons, fonts stuff like that-->
+
+<body>
+
+  <header>
+    <div class="container shadow">
+      <img src="balloon-pop-logo.png" alt="balloon pop logo">
+    </div>
+  </header>
+
+
+  <main class="card container">
+  <form class="d-flex space-between" id="player-form" onsubmit="setPlayer(event)">
+    <div>
+      <label for="name">
+        <i class="fa fa-user-circle" aria-hidden="true"></i>
+        <span>Player Name:</span>
+        </label>
+      <input type="text" name="playerName" required>
+    </div>
+    <button type="submit">Ok</button>
+  </form>
+
+  
+
+    <!-- TRICK: USE ALT UP OR DOWN TO EASILY TARGET TEXT AND MOVE IT!!! -->
+
+    <section id="game"class="game hidden">
+      <div class="card bg-dark text-light">
+        <div class="d-flex space-between">
+          <div>
+            <i class="fa fa-user-circle" aria-hidden="true"></i>
+            <span id="player-name"></span>
+          </div>
+          <div>
+            <span>Top Popped:</span>
+            <!-- note: have to initialize inner text with 0 for this to work -->
+            <span id="high-pop-count">0</span>
+          </div>
+        </div>
+      </div>
+    <div id="main-controls" class="d-flex space-around mt-2">
+      <button class="btn-dark" onclick="changePlayer()">Change Player</button>
+      <button id="start-button" onclick="startGame()">START GAME</button>
+    </div>
+    <div id="game-controls" class="hidden"> 
+
+      <div>
+        <span>Balloons Popped:</span>
+        <!-- note: have to initialize inner text with 0 for this to work -->
+        <span id="pop-count">0</span>
+      </div>
+      
+      <div>
+        <span>Time Remaining:</span>
+        <span id="countdown">0</span>
+      </div>
+      
+      <d-flex class="game-container d-flex">
+        <div class="pump" onclick="inflate()">
+          <div class="handle"></div>
+          <div class="pump-box">
+            <span id="click-count"></span>
+          </div>
+        </div>
+        <div id="balloon" class="Balloon"></div>
+        <audio id="pop-sound" src="burst.mp3"></audio>
+      </d-flex>
+
+    </div>
+
+  </main>
+
+    <div id="scoreboard" class="container card mt-2">
+      <h3 class="text-center">Scoreboard</h3>
+      <div id="players">
+
+      </div>
+    </div>
+
+  </section>
+
+  <script src="main.js"></script>
+
+</body>
+
+</html>
+
+
+
+<!-- helpful note: able to hit alt + shift + f to quickly format code! -->
