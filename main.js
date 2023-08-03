@@ -16,7 +16,8 @@ let clockId = 0
 let timeRemaining = 0
 let currentPlayer = {}   // if we don't give a value, basically says this variable exist, but it's value is nothing. Just declaring the pointer with an empty object
 let currentColor = "red"
-let possibleColors = ["red", "green", "blue", "purple", "pink"]
+let possibleColors = ["red", "green", "blue", "purple", "pink", "brown"]
+
 
 
 // note: what we want to do is make sure that a function only has one responsibility.
